@@ -36,6 +36,9 @@ function renderTasks() {
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
   });
+
+  document.getElementById("taskCount").textContent =
+    "Tổng số công việc: " + tasks.length;
 }
 
 function addTask() {
@@ -52,3 +55,9 @@ function addTask() {
 }
 
 renderTasks();
+document.getElementById("taskInput")
+  .addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      addTask();
+    }
+});
